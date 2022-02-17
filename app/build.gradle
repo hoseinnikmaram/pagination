@@ -6,7 +6,6 @@ plugins {
 
 android {
     compileSdkVersion 31
-    buildToolsVersion "31.0.0"
 
     defaultConfig {
         applicationId "com.nikmaram.list"
