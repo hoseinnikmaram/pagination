@@ -2,6 +2,8 @@ package com.nikmaram.list.util
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.marginBottom
+import androidx.core.view.marginStart
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +19,8 @@ class RecyclerViewAdapter(val callback: (position:Int) -> Unit) : PagingDataAdap
         holder.itemView.setOnClickListener {
             callback(position)
         }
+        val context = holder.binding.root.context
+        holder.binding.marginHorizontal = if (position == 0) context.dip2px((holder.itemView.width/2).toFloat()) else context.dip2px(8f)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int) =
