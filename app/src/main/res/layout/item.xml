@@ -5,7 +5,7 @@
 
     <data>
     <variable
-        name="url"
+        name="src"
         type="Integer" />
     </data>
 
@@ -19,7 +19,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            imageURL="@{url}"
+            imageURL="@{src}"
             tools:src="@mipmap/ic_launcher"
             />
     </com.google.android.material.card.MaterialCardView>
