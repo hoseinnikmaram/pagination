@@ -20,7 +20,7 @@ class RecyclerViewAdapter(val callback: (position:Int) -> Unit) : PagingDataAdap
             callback(position)
         }
         val context = holder.binding.root.context
-      //  holder.binding.marginHorizontal = if (position == 0) context.dip2px((holder.itemView.width/2).toFloat()) else context.dip2px(8f)
+        holder.binding.paddingStart = if (position % 3 == 1) context.dip2px((24f).toFloat()) else context.dip2px(0f)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int) =

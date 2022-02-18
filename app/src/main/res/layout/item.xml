@@ -8,16 +8,19 @@
         name="src"
         type="Integer" />
         <variable
-            name="marginHorizontal"
+            name="paddingStart"
             type="int" />
     </data>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layoutDirection="rtl"
+        android:layout_width="124dp"
         android:paddingVertical="@dimen/padding_normal"
-        android:paddingStart="@dimen/padding_normal"
-        android:paddingEnd="@{marginHorizontal}"
-        android:layout_height="wrap_content">
+        tools:paddingStart="24dp"
+        android:paddingStart="@{paddingStart}"
+        android:layout_height="116dp"
+        tools:ignore="RtlSymmetry">
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view"
         android:layout_width="100dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="@dimen/cardview_compat_inset_shadow"
