@@ -9,12 +9,14 @@ import androidx.paging.cachedIn
 import com.nikmaram.list.model.Photo
 import com.nikmaram.list.util.PAGE_SIZE
 import com.nikmaram.list.util.PhotoPagingSource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
-
-class MainActivityViewModel : ViewModel() {
+import javax.inject.Inject
+@HiltViewModel
+class MainActivityViewModel @Inject constructor(private val photoPagingSource: PhotoPagingSource): ViewModel() {
 
     fun getListData(): Flow<PagingData<Photo>> {
         return Pager (config = PagingConfig(pageSize = PAGE_SIZE),
-            pagingSourceFactory = {PhotoPagingSource()}).flow.cachedIn(viewModelScope)
+            pagingSourceFactory = {photoPagingSource}).flow.cachedIn(viewModelScope)
     }
 }
