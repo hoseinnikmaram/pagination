@@ -24,8 +24,6 @@ f
 app/.gitignore,5/1/51e1c5d383dfaa35e0e7e5873a0a99355a86880f
 P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
-g
-7app/src/main/java/com/nikmaram/list/model/PhotoModel.kt,1/0/1072f24f5a9e90e6ecda96e56358a7c2c44b2414
 @
 app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
 j

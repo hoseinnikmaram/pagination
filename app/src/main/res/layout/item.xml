@@ -30,7 +30,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             imageURL="@{src}"
-            tools:src="@mipmap/ic_launcher"
+            android:scaleType="fitXY"
+            tools:src="@drawable/cory"
             />
     </com.google.android.material.card.MaterialCardView>
     </LinearLayout>

@@ -10,7 +10,7 @@ fun providePhotos(page:Int): MutableList<Photo> {
     val startIndex = page * PAGE_SIZE
     val endIndex = startIndex + PAGE_SIZE
     for (i in startIndex..endIndex){
-        photoList.add(Photo(R.mipmap.ic_launcher_round,i,page))
+        photoList.add(Photo(R.drawable.cory,i,page))
     }
     return photoList
 }
