@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -13,14 +14,16 @@ import com.nikmaram.list.databinding.ActivityMainBinding
 import com.nikmaram.list.util.PAGE_SIZE
 import com.nikmaram.list.util.RecyclerViewAdapter
 import com.nikmaram.list.util.SCROLL_DELAY
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import java.util.*
+import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    lateinit var viewModel: MainActivityViewModel
     lateinit var binding: ActivityMainBinding
     private lateinit var recyclerViewAdapter: RecyclerViewAdapter
+    private val viewModel: MainActivityViewModel by viewModels()
     private val handler = Handler(Looper.getMainLooper())
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +32,6 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,position.toString(),Toast.LENGTH_SHORT).show()
         }
         binding.recycler.adapter = recyclerViewAdapter
-        viewModel  = ViewModelProvider(this).get(MainActivityViewModel::class.java)
         getData()
         automaticScroll()
     }
