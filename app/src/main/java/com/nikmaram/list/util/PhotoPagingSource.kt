@@ -4,8 +4,9 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.nikmaram.list.model.Photo
 import com.nikmaram.list.model.providePhotos
+import javax.inject.Inject
 
-class PhotoPagingSource() : PagingSource<Int,Photo>() {
+class PhotoPagingSource @Inject constructor() : PagingSource<Int,Photo>() {
     override fun getRefreshKey(state: PagingState<Int, Photo>): Int? {
         return state.anchorPosition
     }
