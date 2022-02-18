@@ -6,8 +6,6 @@ A
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-<
-build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 7
 gradlew,5/b/5bbfa66edb4db3c7c33c5181f43510990d3307f9
 ;
@@ -22,13 +20,7 @@ f
 6app/src/test/java/com/nikmaram/list/ExampleUnitTest.kt,f/b/fb03bd5698ef25d0caf7dd68c15cd7da99805277
 >
 app/.gitignore,5/1/51e1c5d383dfaa35e0e7e5873a0a99355a86880f
-P
- app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
-@
-app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
 j
 :app/src/main/java/com/nikmaram/list/util/BindingAdapter.kt,5/0/50f7f2a56098f97c81ec95ce745cbc2cab05a50a
 g
 7app/src/main/java/com/nikmaram/list/util/DensityUtil.kt,a/2/a20d0bf838017d15a448194da9ee8abfbe613254
-m
-=app/src/main/java/com/nikmaram/list/util/PhotoPagingSource.kt,6/a/6ab0b63ed28ad520b8de6b7ad41488d1a822bb9e
