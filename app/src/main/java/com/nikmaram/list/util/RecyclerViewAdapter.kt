@@ -2,8 +2,6 @@ package com.nikmaram.list.util
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.view.marginBottom
-import androidx.core.view.marginStart
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -11,7 +9,8 @@ import com.nikmaram.list.R
 import com.nikmaram.list.databinding.ItemBinding
 import com.nikmaram.list.model.Photo
 
-class RecyclerViewAdapter(val callback: (position:Int) -> Unit) : PagingDataAdapter<Photo,RecyclerViewAdapter.MyViewHolder>(DiffUtilCallBack()) {
+class RecyclerViewAdapter(val callback: (position: Int) -> Unit) :
+    PagingDataAdapter<Photo, RecyclerViewAdapter.MyViewHolder>(DiffUtilCallBack()) {
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = getItem(position)
@@ -20,16 +19,19 @@ class RecyclerViewAdapter(val callback: (position:Int) -> Unit) : PagingDataAdap
             callback(position)
         }
         val context = holder.binding.root.context
-        holder.binding.paddingStart = if (position % 3 == 1) context.dip2px((24f).toFloat()) else context.dip2px(0f)
+        holder.binding.paddingStart =
+            if (position % 3 == 1) context.dip2px(PADDING_ABNORMAL) else context.dip2px(
+                PADDING_ZERO
+            )
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int) =
         MyViewHolder(ItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
 
 
-    class MyViewHolder(val binding: ItemBinding): RecyclerView.ViewHolder(binding.root)
+    class MyViewHolder(val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root)
 
-    class DiffUtilCallBack: DiffUtil.ItemCallback<Photo>() {
+    class DiffUtilCallBack : DiffUtil.ItemCallback<Photo>() {
         override fun areItemsTheSame(oldItem: Photo, newItem: Photo): Boolean {
             return oldItem.id == newItem.id
         }

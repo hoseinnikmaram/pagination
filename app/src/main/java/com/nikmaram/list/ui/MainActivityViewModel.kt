@@ -7,7 +7,6 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.nikmaram.list.model.Photo
-import com.nikmaram.list.util.MAX_SIZE_PAGE
 import com.nikmaram.list.util.PAGE_SIZE
 import com.nikmaram.list.util.PhotoPagingSource
 import kotlinx.coroutines.flow.Flow
@@ -15,7 +14,7 @@ import kotlinx.coroutines.flow.Flow
 class MainActivityViewModel : ViewModel() {
 
     fun getListData(): Flow<PagingData<Photo>> {
-        return Pager (config = PagingConfig(pageSize = PAGE_SIZE, maxSize = MAX_SIZE_PAGE),
+        return Pager (config = PagingConfig(pageSize = PAGE_SIZE),
             pagingSourceFactory = {PhotoPagingSource()}).flow.cachedIn(viewModelScope)
     }
 }
